@@ -2,13 +2,13 @@ import type { FeedEntry } from './app/types/feed'
 
 const basicConfig = {
 	title: '2_haowen_V',
-	subtitle: '博客',
+	subtitle: '摸鱼',
 	// 长 description 利好于 SEO
 	description: '博客',
 	author: {
-		name: '博客',
+		name: '你好',
 		avatar: 'https://www.example.site/api/avatar.png',
-		email: 'hi@example.cyou',
+		email: 'hehaowen.cn@outlook.com',
 		homepage: 'https://www.example.site/',
 	},
 	copyright: {
@@ -18,9 +18,9 @@ const basicConfig = {
 	},
 	favicon: 'https://www.example.site/api/icon.png',
 	language: 'zh-CN',
-	timeEstablished: '2019-07-19',
+	timeEstablished: '2026-05-22',
 	timeZone: 'Asia/Shanghai',
-	url: 'https://blog.example.site/',
+	url: 'https://hehaowen.com.cn/',
 	defaultCategory: '未分类',
 }
 
