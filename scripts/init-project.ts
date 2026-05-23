@@ -38,7 +38,7 @@ fs.writeFileSync(`${PATH_NEW_MD}/example.md`, exampleMdContent)
 const PATH_APP_CONFIG = './app/app.config.ts'
 const appConfigContent = fs.readFileSync(PATH_APP_CONFIG, 'utf8')
 	.replace(/'.*?avatar.com.*?'/, 'blogConfig.author.avatar')
-	.replaceAll('L33Z22L11\'', 'octocat\'')
+	.replaceAll('L33Z22L11\'', 'hehaowen-Geek\'')
 	.replace('\'/theme\'', `'https://blog.zhilu.site/theme'`)
 	.replace(/'.?ICP备.*?'/, '\'备案\'')
 fs.writeFileSync(PATH_APP_CONFIG, appConfigContent)

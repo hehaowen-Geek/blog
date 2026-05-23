@@ -2,11 +2,11 @@ import type { FeedEntry } from './app/types/feed'
 
 const basicConfig = {
 	title: '2_haowen_V',
-	subtitle: '摸鱼',
+	subtitle: '顺天意,承因果,今日方知我是我',
 	// 长 description 利好于 SEO
 	description: '博客',
 	author: {
-		name: '你好',
+		name: '2_haowen_V',
 		avatar: 'https://www.example.site/api/avatar.png',
 		email: 'hehaowen.cn@outlook.com',
 		homepage: 'https://www.example.site/',

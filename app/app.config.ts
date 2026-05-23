@@ -45,7 +45,7 @@ export default defineAppConfig({
 
 		stats: {
 			/** 归档页面每年标题对应的年龄 */
-			birthYear: 2003,
+			birthYear: 2006,
 			/** blog-stats widget 的预置文本 */
 			wordCount: '约10万',
 		},
@@ -58,8 +58,8 @@ export default defineAppConfig({
 		/** 侧边栏底部图标导航 */
 		iconNav: [
 			{ icon: 'tabler:home', text: '个人主页', url: blogConfig.author.homepage },
-			{ icon: 'ri:qq-line', text: '交流群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
-			{ icon: 'tabler:brand-github', text: 'GitHub: octocat', url: 'https://github.com/octocat' },
+			{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://jq.qq.com/' },
+			{ icon: 'tabler:brand-github', text: 'GitHub: 2_haowen_V', url: 'https://github.com/hehaowen-Geek' },
 			{ icon: 'tabler:rss', text: 'Atom订阅', url: '/atom.xml' },
 			{ icon: 'ri:subway-line', text: '开往 - 博客下一站', url: 'https://www.travellings.cn/go.html' },
 		] satisfies NavItem[],
@@ -75,8 +75,9 @@ export default defineAppConfig({
 			{
 				title: '社交',
 				items: [
-					{ icon: 'tabler:brand-github', text: 'octocat', url: 'https://github.com/octocat' },
-					{ icon: 'ri:qq-line', text: '群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
+					{ icon: 'tabler:brand-github', text: 'GitHub: 2_haowen_V', url: 'https://github.com/hehaowen-Geek' },
+					{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
+					{ icon: 'tabler:brand-twitter', text: 'Twitter: @HaowenV', url: 'https://twitter.com/HaowenV' },
 					{ icon: 'tabler:mail', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
 				],
 			},

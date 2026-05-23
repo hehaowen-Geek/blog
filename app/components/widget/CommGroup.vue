@@ -7,11 +7,11 @@
 	bg-right
 >
 	<div class="title text-creative">
-		纸网接入点
+		个人QQ
 	</div>
 
 	<Tip copy icon :tip-options="{ placement: 'left' }">
-		<Icon name="ri:qq-fill" />169994096
+		<Icon name="ri:qq-fill" />3976400922
 	</Tip>
 </BlogWidget>
 </template>

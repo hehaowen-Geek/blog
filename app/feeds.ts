@@ -1156,18 +1156,6 @@ export default [
 				comment: '素未谋面的同事，前端大手子。',
 			},
 			{
-				author: 'LuckyFish',
-				title: 'NoName Blog',
-				desc: '一条鱼的自娱自乐',
-				link: 'https://blog.luckyfishes.site/',
-				feed: 'https://blog.luckyfishes.site/rss.xml',
-				icon: 'https://blog.luckyfishes.site/favicon.ico',
-				avatar: getOicqAvatar('2383690354'),
-				archs: ['Next.js', 'Vercel'],
-				date: '2026-03-02',
-				comment: '“老八校”西建大iOS Club前社长，但任职期间没有苹果设备。',
-			},
-			{
 				author: 'Almango',
 				sitenick: '啊芒果',
 				desc: '天真永不消逝，浪漫至死不渝',
