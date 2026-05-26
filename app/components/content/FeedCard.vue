@@ -5,6 +5,15 @@ import { Temporal } from 'temporal-polyfill'
 
 const props = defineProps<FeedEntry>()
 
+const formattedDate = computed(() => {
+	const val = props.date
+	try {
+		return Temporal.PlainDate.from(val).toLocaleString()
+	} catch {
+		return String(val ?? '')
+	}
+})
+
 const appConfig = useAppConfig()
 const route = useRoute()
 const isInspect = computed(() => import.meta.dev && route.query.inspect !== undefined)
@@ -78,7 +87,7 @@ function getInspectStyle(src: string): CSSProperties {
 		</div>
 		<div class="desc-content">
 			<div class="date">
-				{{ Temporal.PlainDate.from(date).toLocaleString() }}
+				{{ formattedDate }}
 			</div>
 
 			<p>{{ error ?? desc }}</p>
