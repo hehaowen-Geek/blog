@@ -2,8 +2,8 @@
 <BlogWidget
 	card
 	dim
-	title="博客/技术社区"
-	bg-img="https://p.qlogo.cn/gh/169994096/169994096/100/"
+	title="联系方式"
+	bg-img="" 
 	bg-right
 >
 	<div class="title text-creative">

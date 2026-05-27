@@ -77,6 +77,7 @@ export default defineAppConfig({
 				items: [
 					{ icon: 'tabler:brand-github', text: 'GitHub: 2_haowen_V', url: 'https://github.com/hehaowen-Geek' },
 					{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
+					{ icon: 'tabler:brand-wechat', text: 'Hehaowen_TechLab', url: 'https://wechat.com/' },
 					{ icon: 'tabler:brand-twitter', text: 'Twitter: @HaowenV', url: 'https://twitter.com/HaowenV' },
 					{ icon: 'tabler:mail', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
 				],

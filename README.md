@@ -12,6 +12,7 @@
 ## 耻辱柱 / Hall of Shame
 
 > [!CAUTION]
+>
 > - 部署前必须完成项目个性化配置与内容修改，不得将我的信息用于你的网站图标/名称，严禁将项目内我的文章以你的名义重新发布至公开环境。
 > - 部署前必须完成项目个性化配置与内容修改，不得将我的信息用于你的网站图标/名称，严禁将项目内我的文章以你的名义重新发布至公开环境。
 > - 部署前必须完成项目个性化配置与内容修改，不得将我的信息用于你的网站图标/名称，严禁将项目内我的文章以你的名义重新发布至公开环境。
@@ -55,7 +56,7 @@
 | [KingKangBlog](https://blog.kingkang.xyz/)   | KingStoning   | v3.4.9         |                                              |
 | [LittleBun](https://blog.wl.do/)             | CiZaii        | v3.5.1         |                                              |
 | [钟神秀](https://blog.zsxcoder.top/)         | mcyzsx        | v3.6.0         |                                              |
-| [林间拾语](https://www.xhhao.com/)           | acanyo        | Halo           | https://www.halo.run/store/apps/app-jglhpodw |
+| [林间拾语](https://www.xhhao.com/)           | acanyo        | Halo           | <https://www.halo.run/store/apps/app-jglhpodw> |
 | [Wa 的小家](https://blog.gslpro.top/)        | Shalomguan    | v3.5.2         |                                              |
 | [青序栈](https://www.qixz.cn/)               | scfcn         | v3.6.4         |                                              |
 | [Axel Beta](https://sc.axel.xin/)            | ErenAxel      | v3.6.4         |                                              |

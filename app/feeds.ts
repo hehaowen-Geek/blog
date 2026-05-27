@@ -7,7 +7,7 @@ import { getFavicon, getGithubAvatar, getGithubIcon, getOciqGroupAvatar, getOicq
 export default [
 	// #region Clarity
 	{
-		name: '清晰体验',
+		name: 'LFEVU',
 		desc: '使用 Clarity 博客主题构建的网站。',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
@@ -17,8 +17,8 @@ export default [
 				sitenick: '杂记本',
 				title: '想到什么写什么',
 				desc: '一个什么都可能会写的博客',
-				link: 'https://blog.bohan1130.top/',
-				feed: 'https://blog.bohan1130',
+				link: 'https://blog.han1130.top/',
+				feed: 'https://blog.han1130.top/atom.xml',
 				icon: 'https://cravatar.cn',
 				avatar: 'https://cdn.libravatar.',
 				archs: ['Nuxt', 'Netlify'],
@@ -26,19 +26,6 @@ export default [
 				comment: '',
 			},
 
-			{
-				author: '郭雨博',
-				sitenick: '你好世界',
-				title: '想到什么写什么',
-				desc: '一个什么都可能会写的博客',
-				link: 'https://blog.guoyubo.cn/',
-				feed: 'https://blog.guoyubo.cn',
-				icon: 'https://cravatar.cn',
-				avatar: 'https://blog.guoyubo.cn/avatar.jpg',
-				archs: ['Nuxt', 'Netlify'],
-				date: '2025-05-25',
-				comment: '',
-			},
 		],
 	},
 	// #endregion
@@ -66,11 +53,25 @@ export default [
 	// #endregion
 	// #region PKU
 	{
-		name: 'PKU',
-		desc: '北京大学的校友们。',
+		name: 'LFEVU',
+		desc: '漯河食品工程职业大学的校友们',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
 
+
+			{
+				author: '郭雨博',
+				sitenick: '你好世界',
+				title: '想到什么写什么',
+				desc: '一个什么都可能会写的博客',
+				link: 'https://blog.guoyubo.cn/',
+				feed: 'https://blog.guoyubo.cn',
+				icon: 'https://cravatar.cn',
+				avatar: 'https://blog.guoyubo.cn/avatar.jpg',
+				archs: ['Nuxt', 'Netlify'],
+				date: '2025-05-25',
+				comment: '',
+			},
 			// {
 			// 	author: 'Kayle',
 			// 	sitenick: '小站',
