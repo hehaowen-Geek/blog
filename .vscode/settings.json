@@ -46,7 +46,10 @@
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.vBindShorthand": true,
   "workbench.editorAssociations": {
-    "*.svg": "default"
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.dll": "default",
+    "*.svg": "default",
+    "*.md": "trae.markdown.preview.editor"
   },
   "yaml.format.singleQuote": true
 }

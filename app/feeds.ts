@@ -7,7 +7,7 @@ import { getFavicon, getGithubAvatar, getGithubIcon, getOciqGroupAvatar, getOicq
 export default [
 	// #region Clarity
 	{
-		name: 'LFEVU',
+		name: '欢迎光临',
 		desc: '使用 Clarity 博客主题构建的网站。',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
@@ -53,8 +53,8 @@ export default [
 	// #endregion
 	// #region PKU
 	{
-		name: 'LFEVU',
-		desc: '漯河食品工程职业大学的校友们',
+		name: 'LFEVU-CSTA',
+		desc: '网络空间安全技术协会的会友们',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
 
@@ -72,33 +72,6 @@ export default [
 				date: '2025-05-25',
 				comment: '',
 			},
-			// {
-			// 	author: 'Kayle',
-			// 	sitenick: '小站',
-			// 	title: 'Kayle小站',
-			// 	desc: '正在学习嵌入式',
-			// 	link: 'https://www.kayle7.top/',
-			// 	feed: 'https://www.kayle7.top/atom.xml',
-			// 	icon: getOicqAvatar('1239625475', OicqAvatarSize.Size100),
-			// 	avatar: getOicqAvatar('1239625475'),
-			// 	archs: ['Hexo', 'Cloudflare'],
-			// 	date: '2024-06-27',
-			// 	comment: '大学同级，嵌入式学习中。',
-			// 	error: '域名过期',
-			// },
-			// {
-			// 	author: '桃林饮酒',
-			// 	title: '摆烂的桃的Blog',
-			// 	desc: '回不去的何止时间',
-			// 	link: 'https://www.taolin.site/',
-			// 	feed: 'https://www.taolin.site/rss.xml',
-			// 	icon: 'https://www.taolin.site/favicon.ico',
-			// 	avatar: getGithubAvatar('Taolinyinjiu'),
-			// 	archs: ['Astro', 'Vercel'],
-			// 	date: '2024-07-16',
-			// 	comment: '大学同级，嵌入式学习中。',
-			// 	error: '域名过期',
-			// },
 
 		],
 	},
