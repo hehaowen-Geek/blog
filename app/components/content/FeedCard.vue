@@ -104,8 +104,9 @@ function getInspectStyle(src: string): CSSProperties {
 .feed-card {
 	display: flex;
 	align-items: center;
-	gap: 0.2em;
-	width: 14em;
+	gap: 0.5em;
+	min-width: 14em;
+	max-width: 20em; // 允许卡片宽度自适应，避免长用户名被截断
 	margin: 1em auto;
 	padding: 0.5em;
 	line-height: 1.4;
@@ -143,7 +144,7 @@ function getInspectStyle(src: string): CSSProperties {
 	}
 
 	.author {
-		overflow: hidden; // 长词折行
+		white-space: nowrap; // 防止用户名在标点处自动换行
 	}
 
 	.sitenick {

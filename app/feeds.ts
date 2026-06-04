@@ -46,7 +46,18 @@ export default [
 				date: '2024-01-29',
 				comment: '高中时认识的小学校友，目前从事前端开发。',
 			},
-
+			{
+				author: 'Expl0rer.Ct',
+				sitenick: '并非全栈',      // 可选
+				title: '博客标题',          // 可选，长标题
+				desc: '吾将上下而求索',
+				link: 'https://expl0rer.top/',
+				icon: 'https://expl0rer.top/img/avatar_hu_186ba3d0d8bfb6a0.png',
+				avatar: 'https://expl0rer.top/img/avatar_hu_186ba3d0d8bfb6a0.png',
+				archs: ['CTF-PWN', '二进制漏洞利用'],  // 技术栈，如 Vue、Next.js、Hugo 等
+				date: '2026-06-04',         // 添加友链的日期
+				comment: '纯属是二进制安全领域的好奇',         // 可选，对你的备注
+			},
 			/* ========从此处新增友链======== */
 		],
 	},
