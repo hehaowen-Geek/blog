@@ -73,8 +73,6 @@ const blogConfig = {
 
 	/** 向 <head> 中添加脚本 */
 	scripts: [
-		// Umami 统计服务
-		{ 'src': 'https://cloud.umami.is/script.js', 'data-website-id': 'de6ftfb01-6b67-4bfe-9f11-79a7c7edf3de', 'defer': true },
 		// Twikoo 评论系统
 		{ src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 	],
