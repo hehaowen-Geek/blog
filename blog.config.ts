@@ -18,7 +18,7 @@ const basicConfig = {
 	},
 	favicon: 'https://hehaowen.com.cn/image/favicon.ico',
 	language: 'zh-CN',
-	timeEstablished: '2026-05-22',
+	timeEstablished: '2026-05-20',
 	timeZone: 'Asia/Shanghai',
 	url: 'https://hehaowen.com.cn/',
 	defaultCategory: '未分类',
@@ -73,10 +73,8 @@ const blogConfig = {
 
 	/** 向 <head> 中添加脚本 */
 	scripts: [
-		// 自己部署的 Umami 统计服务
-		{ 'src': 'https://zhi.example.site/zhi.js', 'data-website-id': 'a1997c81-a42b-46f6-8d1d-8fbd67a8ef41', 'defer': true },
-		// 自己网站的 Cloudflare Insights 统计服务
-		{ 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "97a4fe32ed8240ac8284e9bffaf03962"}', 'defer': true },
+		// Umami 统计服务
+		{ 'src': 'https://cloud.umami.is/script.js', 'data-website-id': 'de6ftfb01-6b67-4bfe-9f11-79a7c7edf3de', 'defer': true },
 		// Twikoo 评论系统
 		{ src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 	],

@@ -31,7 +31,7 @@ export default [
 	// #endregion
 	// #region 网上邻居 since 2024
 	{
-		name: '网上邻居',
+		name: '好友',
 		desc: '哔——啵——电波通讯中，欢迎常来串门。',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [

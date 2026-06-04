@@ -93,6 +93,9 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		// @keep-sorted
+		umamiApiUrl: env.UMAMI_API_URL || '',
+		umamiWebsiteId: env.UMAMI_WEBSITE_ID || '',
+		umamiApiKey: env.UMAMI_API_KEY || '',
 		public: {
 			arch,
 			buildTime: Temporal.Now.zonedDateTimeISO().toString(),
