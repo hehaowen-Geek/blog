@@ -73,6 +73,8 @@ const blogConfig = {
 
 	/** 向 <head> 中添加脚本 */
 	scripts: [
+		// 不蒜子官方旋转效果所需的 Font Awesome
+		{ src: 'https://cdn.coolcdn.cn/static/font-awesome/7.0.0/css/all.min.css', rel: 'stylesheet' },
 		// Twikoo 评论系统
 		{ src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 	],

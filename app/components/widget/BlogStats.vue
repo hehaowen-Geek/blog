@@ -7,23 +7,38 @@ const runtimeConfig = useRuntimeConfig()
 // 响应头不正确时，stats.value 可能会是字符串，首次属性访问可能为 undefined
 const { data: stats } = useFetch('/api/stats')
 
-// 不蒜子统计数据（响应式，初始显示加载中）
-const sitePv = ref<string>('...')
-const siteUv = ref<string>('...')
+// 不蒜子统计数据（响应式，初始为 null 表示加载中）
+const sitePv = ref<string | null>(null)
+const siteUv = ref<string | null>(null)
 
-// 注册不蒜子全局回调，更新响应式数据
+// 加载中时显示旋转图标，加载完成后显示数字
+const busuanziLoading = computed(() => sitePv.value === null || siteUv.value === null)
+
+// 组件挂载后加载不蒜子脚本，并通过轮询同步数据到响应式变量
 if (import.meta.client) {
-	;(globalThis as any).BusuanziCallback = (data: { site_pv: number, site_uv: number }) => {
-		sitePv.value = formatNumber(data.site_pv)
-		siteUv.value = formatNumber(data.site_uv)
-	}
-
-	// 组件挂载后加载不蒜子脚本，确保 DOM 已就绪
 	onMounted(() => {
+		// 动态加载不蒜子脚本（官方最新 CDN）
 		const script = document.createElement('script')
-		script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-		script.async = true
+		script.src = 'https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js'
+		script.defer = true
 		document.head.appendChild(script)
+
+		// 不蒜子通过 innerHTML 更新隐藏 span，轮询同步到响应式变量
+		const pvEl = document.getElementById('busuanzi_site_pv') as HTMLSpanElement | null
+		const uvEl = document.getElementById('busuanzi_site_uv') as HTMLSpanElement | null
+		const timer = setInterval(() => {
+			const pv = pvEl?.innerText
+			const uv = uvEl?.innerText
+			if (pv) {
+				sitePv.value = pv
+			}
+			if (uv) {
+				siteUv.value = uv
+			}
+			if (pv && uv) {
+				clearInterval(timer)
+			}
+		}, 1000)
 	})
 }
 
@@ -40,11 +55,15 @@ const blogStats = computed(() => [{
 	tip: yearlyTip.value,
 }, {
 	label: '总访客数',
-	value: siteUv.value,
+	value: busuanziLoading.value
+		? () => h('i', { class: 'fa fa-spinner fa-spin' })
+		: siteUv.value,
 	tip: '不蒜子统计',
 }, {
 	label: '总访问量',
-	value: sitePv.value,
+	value: busuanziLoading.value
+		? () => h('i', { class: 'fa fa-spinner fa-spin' })
+		: sitePv.value,
 	tip: '不蒜子统计',
 }, {
 	label: '运营时长',
@@ -63,5 +82,8 @@ const blogStats = computed(() => [{
 <template>
 <BlogWidget card title="博客统计">
 	<ZDlGroup :items="blogStats" size="small" />
+	<!-- 不蒜子隐藏标签：新版通过 innerHTML 自动填充这些 span -->
+	<span id="busuanzi_site_pv" style="display:none" />
+	<span id="busuanzi_site_uv" style="display:none" />
 </BlogWidget>
 </template>
