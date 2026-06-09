@@ -49,7 +49,7 @@ export default [
 			{
 				author: 'Expl0rer.Ct',
 				sitenick: '并非全栈',      // 可选
-				title: '博客标题',          // 可选，长标题
+				title: 'Expl0rer.Ct',         // 可选
 				desc: '吾将上下而求索',
 				link: 'https://expl0rer.top/',
 				icon: 'https://expl0rer.top/img/avatar_hu_186ba3d0d8bfb6a0.png',
@@ -62,7 +62,7 @@ export default [
 		],
 	},
 	// #endregion
-	// #region PKU
+	// #region 网络空间安全技术协会
 	{
 		name: 'LFEVU-CSTA',
 		desc: '网络空间安全技术协会的会友们',
