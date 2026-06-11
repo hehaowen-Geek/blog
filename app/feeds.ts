@@ -19,8 +19,8 @@ export default [
 				desc: '一个什么都可能会写的博客',
 				link: 'https://blog.han1130.top/',
 				feed: 'https://blog.han1130.top/atom.xml',
-				icon: 'https://cravatar.cn',
-				avatar: 'https://cdn.libravatar.',
+				icon: 'https://img.han1130.top/img/touxiang.png',
+				avatar: 'https://img.han1130.top/img/touxiang.png',
 				archs: ['Nuxt', 'Netlify'],
 				date: '2025-05-23',
 				comment: '',
@@ -35,17 +35,6 @@ export default [
 		desc: '哔——啵——电波通讯中，欢迎常来串门。',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
-			{
-				author: 'isYangs',
-				desc: '一个前端Bug构造师的博客',
-				link: 'https://www.isyangs.cn/',
-				feed: 'https://www.isyangs.cn/feed.xml',
-				icon: 'https://www.isyangs.cn/favicon.svg',
-				avatar: 'https://7.isyangs.cn/8/655c9835780a0-8.jpg',
-				archs: ['Vue', '国内 CDN'],
-				date: '2024-01-29',
-				comment: '高中时认识的小学校友，目前从事前端开发。',
-			},
 			{
 				author: 'Expl0rer.Ct',
 				sitenick: '并非全栈',      // 可选
