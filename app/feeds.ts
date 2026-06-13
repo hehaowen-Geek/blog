@@ -47,6 +47,18 @@ export default [
 				date: '2026-06-04',         // 添加友链的日期
 				comment: '纯属是二进制安全领域的好奇',         // 可选，对你的备注
 			},
+
+			{
+				author: '康可',
+				sitenick: '康可ing',
+				title: '康可ing',
+				desc: 'conquer,conquer,conquer...',
+				link: 'https://blog.yanxisishi.top/',
+				icon: 'https://q1.qlogo.cn/g?b=qq&nk=3497863696&s=640',
+				avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3497863696&s=640',
+				date: '2026-06-13',
+				comment: '',
+			},
 			/* ========从此处新增友链======== */
 		],
 	},
