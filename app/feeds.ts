@@ -43,7 +43,6 @@ export default [
 				link: 'https://expl0rer.top/',
 				icon: 'https://expl0rer.top/img/avatar_hu_186ba3d0d8bfb6a0.png',
 				avatar: 'https://expl0rer.top/img/avatar_hu_186ba3d0d8bfb6a0.png',
-				archs: ['CTF-PWN', '二进制漏洞利用'],  // 技术栈，如 Vue、Next.js、Hugo 等
 				date: '2026-06-04',         // 添加友链的日期
 				comment: '纯属是二进制安全领域的好奇',         // 可选，对你的备注
 			},
@@ -57,6 +56,16 @@ export default [
 				icon: 'https://q1.qlogo.cn/g?b=qq&nk=3497863696&s=640',
 				avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3497863696&s=640',
 				date: '2026-06-13',
+				comment: '',
+			},
+			{
+				author: 'chen7chen',
+				title: '小chen妙妙屋',
+				desc: '一个菜鸡的小屋',
+				link: 'https://blog.xchstudy.org',
+				icon: 'https://blog.xchstudy.org/img/images.webp',
+				avatar: 'https://blog.xchstudy.org/img/images.webp',
+				date: '2026-06-18',
 				comment: '',
 			},
 			/* ========从此处新增友链======== */
@@ -78,7 +87,7 @@ export default [
 				desc: '一个什么都可能会写的博客',
 				link: 'https://blog.guoyubo.cn/',
 				feed: 'https://blog.guoyubo.cn',
-				icon: 'https://cravatar.cn',
+				icon: 'https://blog.guoyubo.cn/avatar.jpg',
 				avatar: 'https://blog.guoyubo.cn/avatar.jpg',
 				archs: ['Nuxt', 'Netlify'],
 				date: '2025-05-25',
@@ -124,6 +133,16 @@ export default [
 				archs: ['WordPress', '服务器'],
 				date: '2024-02-01',
 			},
+
+		],
+	},
+	// #endregion
+	// #region 学习资料
+	{
+		name: '学习资料',
+		desc: '学习平台(别急在慢慢写)',
+
+		entries: [
 
 		],
 	},
