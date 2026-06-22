@@ -105,7 +105,7 @@ export default defineAppConfig({
 	/** 友链页面 */
 	link: {
 		/** 无订阅源展示静音图标 */
-		remindNoFeed: true,
+		remindNoFeed: false, // 已关闭小铃铛(无订阅源提示图标)
 		/** 友链分组内随机排序 */
 		randomInGroup: true,
 	},

@@ -16,7 +16,7 @@ const basicConfig = {
 		name: '署名-非商业性使用-相同方式共享 4.0 国际',
 		url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans',
 	},
-	favicon: 'https://hehaowen.com.cn/image/favicon.ico',
+	favicon: 'https://img.hehaowen.com.cn/image/avatar/%E5%8B%87%E5%A4%AA.png',
 	language: 'zh-CN',
 	timeEstablished: '2026-05-20',
 	timeZone: 'Asia/Shanghai',
