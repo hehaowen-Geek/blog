@@ -368,6 +368,15 @@ export default [
 				comment: "",
 			},
 			{
+				author: "Ubiquiti",
+				desc: "重新定义IT",
+				link: "https://www.ui.com.cn/",
+				icon: "https://www.google.com/s2/favicons?domain=ui.com&sz=128",
+				avatar: "https://www.google.com/s2/favicons?domain=ui.com&sz=128",
+				date: "2026-06-23",
+				comment: "",
+			},
+			{
 				author: "AWS",
 				desc: "全球领先的云计算平台",
 				link: "https://aws.amazon.com/",
