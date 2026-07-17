@@ -15,7 +15,7 @@ export default [
 	// #region Clarity
 	{
 		name: "欢迎光临",
-		desc: "使用 Clarity 博客主题构建的网站。",
+		desc: "欢迎来到我的小站，愿你在此收获知识与快乐。",
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
 			myFeed,
@@ -72,6 +72,18 @@ export default [
 				icon: "https://blog.xchstudy.org/img/images.webp",
 				avatar: "https://blog.xchstudy.org/img/images.webp",
 				date: "2026-06-18",
+				comment: "",
+			},
+
+			{
+				author: "A1right",
+				sitenick: "A1right的小窝",
+				title: "A1right的小窝",
+				desc: "专注 Web 安全、CTF 题解与 Agent 渗透实验的个人博客",
+				link: "https://itsa1right.ink",
+				icon: "https://itsa1right.ink/images/a1right-avatar.png",
+				avatar: "https://itsa1right.ink/images/a1right-avatar.png",
+				date: "2026-07-17",
 				comment: "",
 			},
 			/* ========从此处新增友链======== */
