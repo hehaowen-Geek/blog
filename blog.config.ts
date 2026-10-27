@@ -7,7 +7,7 @@ const basicConfig = {
 	description: '博客',
 	author: {
 		name: '2_haowen_V',
-		avatar: 'https://img.hehaowen.com.cn/image/avatar/%E5%8B%87%E5%A4%AA.png',
+		avatar: 'https://img.hehaowen.com.cn/image/avatar/lis.jpg',
 		email: 'hehaowen.cn@outlook.com',
 		homepage: 'https://hehaowen.com.cn/',
 	},
