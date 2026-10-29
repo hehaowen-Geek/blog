@@ -58,7 +58,7 @@ export default defineAppConfig({
 		/** 侧边栏底部图标导航 */
 		iconNav: [
 			{ icon: 'tabler:home', text: '个人主页', url: blogConfig.author.homepage },
-			{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://jq.qq.com/' },
+			{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://qm.qq.com/q/DxiD0vtcdy' },
 			{ icon: 'tabler:brand-github', text: 'GitHub: 2_haowen_V', url: 'https://github.com/hehaowen-Geek' },
 			{ icon: 'tabler:rss', text: 'Atom订阅', url: '/atom.xml' },
 			{ icon: 'ri:subway-line', text: '开往 - 博客下一站', url: 'https://www.travellings.cn/go.html' },
@@ -76,7 +76,7 @@ export default defineAppConfig({
 				title: '社交',
 				items: [
 					{ icon: 'tabler:brand-github', text: 'GitHub: 2_haowen_V', url: 'https://github.com/hehaowen-Geek' },
-					{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
+					{ icon: 'ri:qq-line', text: 'QQ: 3976400922', url: 'https://qm.qq.com/q/DxiD0vtcdy' },
 					{ icon: 'tabler:brand-wechat', text: 'WeChat: Hehaowen_TechLab', url: 'https://wechat.com/' },
 					{ icon: 'tabler:brand-twitter', text: 'Twitter: @HaowenV', url: 'https://twitter.com/HaowenV' },
 					{ icon: 'tabler:mail', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },

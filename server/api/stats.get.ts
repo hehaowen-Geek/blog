@@ -40,8 +40,9 @@ export default defineEventHandler(async (event) => {
 		existedPath.set(post.path, true)
 
 		// 文章/总字数计数
+		const words = post.readingTime?.words ?? 0
 		stats.total.posts++
-		stats.total.words += post.readingTime.words
+		stats.total.words += words
 
 		// 年文章/年字数计数
 		try {
@@ -51,7 +52,7 @@ export default defineEventHandler(async (event) => {
 			}
 
 			stats.annual[year].posts++
-			stats.annual[year].words += post.readingTime.words
+			stats.annual[year].words += words
 		}
 		catch (e) {
 			console.warn(`${post.path} 文章日期${post.date ? '格式错误' : '为空'}: ${e}`)

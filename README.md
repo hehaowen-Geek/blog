@@ -140,12 +140,24 @@ pnpm init-project # 初始化项目配置
 ```
 
 - 在启动或部署项目时，你需要移除我的文章、我的个人信息、我的统计/评论配置。
-  - `blog.config.ts` 中的站点信息、Umami 站点统计、Cloudflare Insights 统计、Twikoo 评论服务源。
+  - `blog.config.ts` 中的站点信息、Umami 站点统计、Cloudflare Insights 统计、Giscus 评论配置。
   - `app.config.ts` 中的页脚导航、出生年份等。
 
 - 为保证开发体验，需要安装 ESLint、Stylelint 等 VS Code 扩展。如果你不喜欢此项目的格式化风格，可以在 `./eslint.config.mjs` 和 `./.vscode/settings.json` 中调整或者不安装 VS Code 扩展。
 
 - 如果文章 URL 和先前的不相同，可以通过编辑 `redirects.json` 来添加重定向。
+
+### 配置 GitHub 评论
+
+本项目使用 Giscus，将评论存储在 GitHub Discussions 中，无需单独部署评论后端。
+
+1. 在公开仓库的 Settings → General → Features 中开启 Discussions。
+2. 安装 [Giscus GitHub App](https://github.com/apps/giscus)，授权存放评论的仓库。
+3. 打开 [Giscus 配置页](https://giscus.app/zh-CN)，填写仓库名称，选择 `Announcements`（公告）分类。
+4. 将生成代码中的 `data-repo`、`data-repo-id`、`data-category`、`data-category-id` 分别填入 `blog.config.ts` 的 `giscus` 配置。
+5. 重新部署博客，使用 GitHub 账号登录评论区并验证评论。首次评论后才会自动创建对应的讨论。
+
+每篇文章按路径关联独立讨论，切换博客主题时评论区同步切换明暗主题。修改文章路径会改变关联的讨论。
 
 ### 创建文章
 

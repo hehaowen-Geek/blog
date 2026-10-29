@@ -71,19 +71,19 @@ const blogConfig = {
 		enableStyle: true,
 	},
 
+	/** GitHub Discussions 评论：在 https://giscus.app/zh-CN 获取分类 ID */
+	giscus: {
+		repo: 'hehaowen-Geek/blog',
+		repoId: 'R_kgDOSk84yg',
+		category: 'Announcements',
+		categoryId: 'DIC_kwDOSk84ys4DJ5N0',
+	},
+
 	/** 向 <head> 中添加脚本 */
 	scripts: [
 		// 不蒜子官方旋转效果所需的 Font Awesome
 		{ src: 'https://cdn.coolcdn.cn/static/font-awesome/7.0.0/css/all.min.css', rel: 'stylesheet' },
-		// Twikoo 评论系统
-		{ src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 	],
-
-	/** 自己部署的 Twikoo 服务 */
-	twikoo: {
-		envId: 'https://twikoo.example.site/',
-		preload: 'https://twikoo.example.site/',
-	},
 }
 
 /** 用于生成 OPML 和友链页面配置 */

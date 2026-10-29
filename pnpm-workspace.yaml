@@ -49,6 +49,7 @@ catalogs:
   ui:
     '@bikariya/image-viewer': ^0.0.8
     '@bikariya/modals': ^0.0.8
+    '@giscus/vue': ^3.1.1
     '@iconify-json/catppuccin': ^1.2.17
     '@iconify-json/line-md': ^1.2.16
     '@iconify-json/ri': ^1.2.10

@@ -1,118 +1,58 @@
-<script setup lang="tsx">
-import type { TippyComponent } from 'vue-tippy'
+<script setup lang="ts">
+import type { Repo } from '@giscus/vue'
+import Giscus from '@giscus/vue'
 
 const appConfig = useAppConfig()
-
-const commentEl = useTemplateRef('comment')
-const popoverEl = useTemplateRef<TippyComponent>('popover')
-const popoverJumpTo = ref('')
-const popoverInputEl = useTemplateRef('popover-input')
-const showUndo = ref(false)
-
-const popoverBind = ref<TippyComponent['$props']>({})
-
-/** 评论区链接守卫 */
-useEventListener(commentEl, 'click', (e) => {
-	if (!(e.target instanceof Element))
-		return
-
-	if (e.target.matches('.tk-avatar-img'))
-		e.stopPropagation()
-
-	const popoverTarget = e.target.closest('a[target="_blank"]')
-	if (!(popoverTarget instanceof HTMLAnchorElement))
-		return
-
-	e.preventDefault()
-	popoverEl.value?.hide()
-
-	popoverJumpTo.value = safelyDecodeUriComponent(popoverTarget.href)
-	popoverBind.value = {
-		getReferenceClientRect: () => popoverTarget.getBoundingClientRect(),
-		triggerTarget: popoverTarget,
-	}
-
-	nextTick(checkUndoable)
-	popoverEl.value?.show()
-}, { capture: true })
-
-function checkUndoable() {
-	showUndo.value = popoverInputEl.value?.textContent !== popoverJumpTo.value
-}
-
-function undo() {
-	if (!popoverInputEl.value)
-		return
-	popoverInputEl.value.textContent = popoverJumpTo.value
-	checkUndoable()
-}
-
-function confirmOpen() {
-	window.open(popoverInputEl.value?.textContent, '_blank')
-}
-
-onMounted(() => {
-	window.twikoo?.init?.({
-		envId: appConfig.twikoo?.envId,
-		// twikoo 会把挂载后的元素变为 #twikoo
-		el: '#twikoo',
-	})
-})
+const route = useRoute()
+const colorMode = useColorMode()
+const repo = appConfig.giscus.repo as Repo
+const configured = computed(() => !!(appConfig.giscus.repo && appConfig.giscus.repoId && appConfig.giscus.categoryId))
+const theme = computed(() => colorMode.value === 'dark' ? 'dark' : 'light')
 </script>
 
 <template>
-<section ref="comment" class="z-comment">
+<section id="comments" class="z-comment">
 	<h3 class="text-creative">
 		评论区
 	</h3>
-
-	<!-- interactive 默认会把气泡移动到 triggerTarget 的父元素上 -->
-	<Tooltip
-		ref="popover"
-		v-bind="popoverBind"
-		:append-to="() => commentEl!"
-		interactive
-		:aria="{ expanded: false }"
-		trigger="focusin"
-	>
-		<template #content>
-			<div class="popover-confirm">
-				<span
-					ref="popover-input"
-					class="input"
-					contenteditable="plaintext-only"
-					spellcheck="false"
-					@input="checkUndoable"
-					@keydown.enter.prevent="confirmOpen"
-					v-text="popoverJumpTo"
-				/>
-
-				<button
-					v-if="showUndo"
-					aria-label="恢复原始内容"
-					@click="undo()"
-				>
-					<Icon name="tabler:arrow-back-up" />
-				</button>
-
-				<ZButton
-					primary
-					text="访问"
-					@click="confirmOpen"
-				/>
-			</div>
-		</template>
-	</Tooltip>
-
-	<div id="twikoo">
-		<p>评论加载中...</p>
-	</div>
+	<p v-if="!configured" class="comment-notice">
+		评论暂未开放。
+	</p>
+	<template v-else>
+		<p class="comment-notice">
+			使用 GitHub 账号登录后即可评论。
+		</p>
+		<ClientOnly>
+			<Giscus
+				:key="route.path"
+				:repo
+				:repo-id="appConfig.giscus.repoId"
+				:category="appConfig.giscus.category"
+				:category-id="appConfig.giscus.categoryId"
+				mapping="specific"
+				:term="route.path"
+				strict="1"
+				reactions-enabled="1"
+				emit-metadata="0"
+				input-position="top"
+				:theme
+				lang="zh-CN"
+				loading="lazy"
+			/>
+			<template #fallback>
+				<p class="comment-notice">
+					评论加载中…
+				</p>
+			</template>
+		</ClientOnly>
+	</template>
 </section>
 </template>
 
 <style lang="scss" scoped>
 .z-comment {
 	margin: 3rem 1rem;
+	scroll-margin-top: 5rem;
 
 	> h3 {
 		margin-top: 3rem;
@@ -120,142 +60,9 @@ onMounted(() => {
 	}
 }
 
-:deep() > [data-tippy-root] > .tippy-box {
-	padding: 0;
-}
-
-.popover-confirm {
-	display: flex;
-	align-items: center;
-	overflow-wrap: anywhere;
-
-	> .input {
-		min-width: 0;
-		padding: 0.3em 0.6em;
-		outline: none;
-	}
-
-	> button {
-		flex-shrink: 0;
-		align-self: stretch;
-		padding: 0.3em;
-		border-radius: 0 0.5em 0.5em 0;
-	}
-}
-
-:deep(#twikoo) {
-	margin: 2em 0;
-
-	.tk-admin-container {
-		position: fixed;
-		z-index: calc(var(--z-index-popover) + 1);
-	}
-
-	.tk-input {
-		font-family: var(--font-monospace);
-	}
-
-	.tk-avatar {
-		border-radius: 50%;
-
-		@supports (corner-shape: squircle) {
-			corner-shape: superellipse(1.2);
-		}
-
-		&.tk-clickable {
-			cursor: auto;
-		}
-	}
-
-	.tk-time {
-		color: var(--c-text-3);
-	}
-
-	.tk-content {
-		margin-top: 0;
-	}
-
-	.tk-comments-title, .tk-nick {
-		font-family: var(--font-creative);
-	}
-
-	.tk-owo-emotion {
-		width: auto;
-		height: 1.4em;
-		vertical-align: text-bottom;
-	}
-
-	.tk-extras, .tk-footer {
-		font-size: 0.7em;
-		color: var(--c-text-3);
-	}
-
-	.tk-replies:not(.tk-replies-expand) {
-		mask-image: linear-gradient(to top, transparent, #FFF 4em);
-	}
-
-	.tk-expand {
-		border-radius: 0.5em;
-		transition: background-color 0.1s;
-	}
-
-	.tippy-svg-arrow > svg {
-		fill: inherit;
-		width: auto;
-		height: auto;
-	}
-}
-
-:deep(:where(.tk-preview-container,.tk-content)) {
-	pre {
-		overflow: auto;
-		border-radius: 0.5em;
-		font-size: 0.85em;
-	}
-
-	a {
-		margin: -0.1em -0.2em;
-		padding: 0.1em 0.2em;
-		background: linear-gradient(var(--c-primary-soft), var(--c-primary-soft)) no-repeat center bottom / 100% 0.1em;
-		color: var(--c-primary);
-		transition: all 0.2s;
-
-		&:hover {
-			border-radius: 0.3em;
-			background-size: 100% 100%;
-		}
-	}
-
-	p {
-		margin: 0.2em 0;
-	}
-
-	img {
-		border-radius: 0.5em;
-	}
-
-	menu, ol, ul {
-		margin: 0.5em 0;
-		padding-inline-start: 1.5em;
-		font-size: 0.9rem;
-		list-style: revert;
-
-		> li {
-			margin: 0.2em 0;
-
-			&::marker {
-				color: var(--c-primary);
-			}
-		}
-	}
-
-	blockquote {
-		margin: 0.5em 0;
-		padding: 0.2em 0.5em;
-		border-inline-start: 4px solid var(--c-border);
-		border-radius: 4px;
-		background-color: var(--c-bg-2);
-		font-size: 0.9em;
-	}
+.comment-notice {
+	margin: 1rem 0;
+	font-size: 0.9em;
+	color: var(--c-text-3);
 }
 </style>

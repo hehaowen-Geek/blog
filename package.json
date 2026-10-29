@@ -30,6 +30,7 @@
     "@bikariya/image-viewer": "catalog:ui",
     "@bikariya/modals": "catalog:ui",
     "@bikariya/shiki": "catalog:content",
+    "@giscus/vue": "catalog:ui",
     "@nuxt/content": "catalog:content",
     "@nuxt/icon": "catalog:ui",
     "@nuxt/image": "catalog:ui",
