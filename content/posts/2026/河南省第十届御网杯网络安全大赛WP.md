@@ -6,7 +6,7 @@ updated: 2026-05-27 19:03:49
 image: https://img.hehaowen.com.cn/image/pictures/%E5%BE%A1%E7%BD%91%E6%9D%AF.jpg
 categories: [安全]
 tags: []
-recommend: true
+recommend: 1
 ---
 ## 签到题
 
