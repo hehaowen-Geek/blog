@@ -87,7 +87,6 @@ export default defineAppConfig({
 				items: [
 					{ icon: 'simple-icons:nuxt', text: `主题: ${pascalCase(name)} ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
 					{ icon: 'tabler:color-swatch', text: '主题和组件文档', url: 'https://blog.zhilu.site/theme' },
-					{ icon: 'tabler:certificate', text: '豫ICP备2026025212号-1', url: 'https://beian.miit.gov.cn/' },
 				],
 			},
 		] satisfies Nav,
@@ -116,6 +115,7 @@ export default defineAppConfig({
 			title: '',
 			items: [
 				{ icon: 'tabler:files', text: '文章', url: '/' },
+				{ icon: 'tabler:user', text: '关于我', url: '/about' },
 				{ icon: 'tabler:link', text: '友链', url: '/link' },
 				{ icon: 'tabler:archive', text: '归档', url: '/archive' },
 			],
