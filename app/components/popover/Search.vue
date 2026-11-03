@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ModalEmits, ModalProps } from '#modals'
 import MiniSearch from 'minisearch'
+import profile from '~/profile'
 
 const props = defineProps<ModalProps>()
 
@@ -29,6 +30,20 @@ const miniSearch = new MiniSearch({
 	processTerm: segmenter
 		? term => Array.from(segmenter.segment(term), seg => seg.segment.toLowerCase())
 		: undefined,
+})
+
+miniSearch.add({
+	id: '/about',
+	title: `${profile.name} · 个人简介`,
+	titles: ['关于我'],
+	level: 1,
+	content: [
+		profile.intro,
+		...profile.education.map(entry => `${entry.institution} ${entry.detail}`),
+		...profile.awards.map(entry => `${entry.title} ${entry.detail}`),
+		...profile.certifications.map(entry => `${entry.title} ${entry.detail}`),
+		...profile.training.map(entry => `${entry.title} ${entry.detail}`),
+	].join('\n'),
 })
 
 const searchStore = useSearchStore()

@@ -4,11 +4,44 @@ import profile from '~/profile'
 const appConfig = useAppConfig()
 useLayoutStore().setAside([])
 
+const profileUrl = new URL('/about', appConfig.url).href
+
 useSeoMeta({
-	title: `${profile.name} · 个人简介`,
+	title: `${profile.name} · 个人主页 · 网络安全与人工智能`,
 	description: profile.intro,
+	robots: 'index, follow',
+	ogTitle: `${profile.name} · 个人主页`,
+	ogDescription: profile.intro,
+	ogUrl: profileUrl,
 	ogType: 'profile',
 	ogImage: profile.avatar,
+})
+
+useHead({
+	link: [{ rel: 'canonical', href: profileUrl }],
+	script: [{
+		type: 'application/ld+json',
+		innerHTML: JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'ProfilePage',
+			'@id': `${profileUrl}#webpage`,
+			'url': profileUrl,
+			'name': `${profile.name} · 个人主页`,
+			'inLanguage': 'zh-CN',
+			'mainEntity': {
+				'@type': 'Person',
+				'@id': `${profileUrl}#person`,
+				'name': '赫浩文',
+				'alternateName': ['hehaowen', 'Haowen He', appConfig.author.name],
+				'url': profileUrl,
+				'image': profile.avatar,
+				'description': profile.intro,
+				'affiliation': { '@type': 'EducationalOrganization', 'name': profile.affiliation },
+				'knowsAbout': profile.interests.map(interest => interest.title),
+				'sameAs': ['https://github.com/hehaowen-Geek'],
+			},
+		}).replace(/</g, '\\u003c'),
+	}],
 })
 </script>
 
