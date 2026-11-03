@@ -86,6 +86,15 @@ export default [
 				date: "2026-07-17",
 				comment: "",
 			},
+			{
+				author: "大雪深埋",
+				title: "大雪深埋",
+				link: "https://www.cnblogs.com/dxsm",
+				icon: "https://pic.cnblogs.com/avatar/3646580/20250518173721.png",
+				avatar: "https://pic.cnblogs.com/avatar/3646580/20250518173721.png",
+				date: "2026-11-04",
+				comment: "",
+			},
 			/* ========从此处新增友链======== */
 		],
 	},
